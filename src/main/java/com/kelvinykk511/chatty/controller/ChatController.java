@@ -26,13 +26,13 @@ public class ChatController {
 
     @MessageMapping("/private-message")
     public Message receivePrivateMessage(@Payload Message message){
-        simpMessagingTemplate.convertAndSendToUser(message.getRecceiverName(), "/private", message);
+        simpMessagingTemplate.convertAndSendToUser(message.getReceiverName(), "/private", message);
         return message;
     }
 
     @MessageMapping("/group-message")
     public Message receiveGroupMessage(@Payload Message message){
-        simpMessagingTemplate.convertAndSendToUser(message.getRecceiverName(), "/private", message);
+        simpMessagingTemplate.convertAndSendToUser(message.getReceiverName(), "/private", message);
         return message;
     }
 }
